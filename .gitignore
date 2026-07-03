@@ -1,0 +1,8 @@
+# Original CV source files — kept out of the public repo on purpose.
+# The Europass PDF contains private data (address, phone, date of birth)
+# that must never reach GitHub Pages. The published CV is cv.pdf.
+SAI_VISHNU_SWAROOP_CV.pdf
+Sai_Vishnu_CV_4.pdf
+
+# Local tooling
+.claude/

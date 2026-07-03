@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Vishnu — M.Sc. Computer Science Student &amp; Software Developer</title>
+  <meta name="description" content="Portfolio of Sai Vishnu, M.Sc. Computer Science student at TU Dresden and software developer specializing in Generative AI and end-to-end test automation.">
+  <meta property="og:title" content="Sai Vishnu — Software Developer">
+  <meta property="og:description" content="M.Sc. Computer Science student at TU Dresden. Generative AI & end-to-end test automation.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d9488'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E">
+
+  <!-- Set theme + language before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('portfolio-theme');
+        if (theme !== 'dark' && theme !== 'light') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        root.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('portfolio-lang');
+        if (lang !== 'en' && lang !== 'de') {
+          lang = (navigator.language || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
+        }
+        root.setAttribute('lang', lang);
+      } catch (e) { /* storage unavailable — defaults stay */ }
+    })();
+  </script>
+
+  <!-- Fonts are self-hosted (see fonts/ + @font-face in styles.css) to avoid
+       third-party requests — relevant for GDPR compliance in Germany. -->
+  <link rel="preload" href="fonts/bricolage-grotesque-v9-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===================== Navigation ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner" aria-label="Main navigation" data-i18n-aria="aria.mainNav">
+
+      <!-- Language slider — always top-left -->
+      <button class="lang-toggle" id="langToggle" type="button" role="switch" aria-checked="false" aria-label="Switch language between English and German" data-i18n-aria="aria.langToggle">
+        <span class="lang-opt lang-opt-en" aria-hidden="true">EN</span>
+        <span class="lang-opt lang-opt-de" aria-hidden="true">DE</span>
+        <span class="lang-thumb" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark / light mode" data-i18n-aria="aria.themeToggle">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"/>
+            <path d="M12 2.5v2.4M12 19.1v2.4M4.3 4.3l1.7 1.7M18 18l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.3 19.7 6 18M18 6l1.7-1.7"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu" data-i18n-aria="aria.menuToggle">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-badges" data-animate="fade-down">
+          <span class="badge badge-status">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.badgeStatus">Open to Werkstudent roles</span>
+          </span>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="hero.badgeLocation">Dresden, Germany</span>
+          </span>
+        </div>
+
+        <p class="hero-greeting" data-animate="fade-up" data-i18n="hero.greeting">Hi, I'm</p>
+        <h1 class="hero-name" data-animate="fade-up">Sai&nbsp;Vishnu<span class="accent-dot">.</span></h1>
+        <p class="hero-role" data-animate="fade-up" data-i18n="hero.role">M.Sc. Computer Science Student @ TU Dresden · Software Developer</p>
+
+        <p class="hero-typing" data-animate="fade-up">
+          <span data-i18n="hero.typingPrefix">Focused on</span>
+          <span class="typed-wrap"><span class="typed" id="typedText">Generative AI</span><span class="typed-cursor" aria-hidden="true"></span></span>
+        </p>
+
+        <p class="hero-tagline" data-animate="fade-up" data-i18n="hero.tagline">
+          I build Generative AI solutions and end-to-end test automation — from LLM-powered test generation to enterprise-scale document pipelines.
+        </p>
+
+        <div class="hero-actions" data-animate="fade-up">
+          <a href="#projects" class="btn btn-primary">
+            <span data-i18n="hero.viewProjects">View Projects</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="cv.pdf" class="btn btn-ghost" download="Sai_Vishnu_CV.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
+            <span data-i18n="hero.downloadCv">Download CV</span>
+          </a>
+          <div class="hero-socials">
+            <a href="https://github.com/Vishnu467" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" data-i18n-aria="aria.github">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.68 5.38-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/vishnu467" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" data-i18n-aria="aria.linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg>
+            </a>
+            <a href="mailto:saivishnuswaroop@gmail.com" class="icon-btn" aria-label="Send an email" data-i18n-aria="aria.email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" data-animate="fade-in">
+        <span data-i18n="hero.scrollHint">Scroll to explore</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14m0 0 5-5m-5 5-5-5"/></svg>
+      </a>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <p class="kicker" data-reveal data-i18n="about.kicker">01 · About</p>
+        <h2 class="section-title" data-reveal data-i18n="about.title">A short introduction</h2>
+
+        <div class="about-grid">
+          <div class="about-text" data-reveal>
+            <p data-i18n="about.p1">I'm an M.Sc. Computer Science student at TU Dresden with 2+ years of industry experience in Python automation, Generative AI / LLM evaluation, and end-to-end test automation with Selenium and Cypress.</p>
+            <p data-i18n="about.p2">I'm currently looking for a working student (Werkstudent) position in software development, AI/ML, or test automation — available up to 20 hours per week during the lecture period and full-time during semester breaks.</p>
+
+            <h3 class="about-lang-title" data-i18n="about.langTitle">Languages</h3>
+            <ul class="lang-chips">
+              <li class="chip"><span data-i18n="about.lang.en">English</span><span class="chip-level">C1</span></li>
+              <li class="chip"><span data-i18n="about.lang.de">German</span><span class="chip-level">A2</span></li>
+              <li class="chip"><span data-i18n="about.lang.te">Telugu</span><span class="chip-level" data-i18n="about.lang.native">Native</span></li>
+              <li class="chip"><span data-i18n="about.lang.kn">Kannada</span></li>
+            </ul>
+          </div>
+
+          <div class="stats-grid" data-reveal-group>
+            <div class="stat-card" data-reveal>
+              <p class="stat-value"><span data-count="2" data-duration="900">0</span><span class="stat-suffix">+</span></p>
+              <p class="stat-label" data-i18n="about.stat1.label">Years in industry</p>
+            </div>
+            <div class="stat-card" data-reveal>
+              <p class="stat-value"><span data-count="90">0</span><span class="stat-suffix">%</span></p>
+              <p class="stat-label" data-i18n="about.stat2.label">Faster test-case generation</p>
+            </div>
+            <div class="stat-card" data-reveal>
+              <p class="stat-value"><span data-count="75">0</span><span class="stat-suffix">%</span></p>
+              <p class="stat-label" data-i18n="about.stat3.label">Less manual effort</p>
+            </div>
+            <div class="stat-card" data-reveal>
+              <p class="stat-value"><span class="stat-prefix" data-i18n="about.stat4.prefix">up to</span> <span data-count="100">0</span></p>
+              <p class="stat-label" data-i18n="about.stat4.label">AI-generated test cases per repo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Experience ===================== -->
+    <section class="section section-alt" id="experience">
+      <div class="section-inner">
+        <p class="kicker" data-reveal data-i18n="exp.kicker">02 · Experience</p>
+        <h2 class="section-title" data-reveal data-i18n="exp.title">Where I've worked</h2>
+
+        <div class="timeline">
+          <article class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3 class="tl-role" data-i18n="exp.job1.role">Software Developer</h3>
+                <span class="tl-date" data-i18n="exp.job1.date">Jul 2023 – Sep 2025</span>
+              </div>
+              <p class="tl-org">Genpact · <span data-i18n="exp.job1.location">Bangalore, India</span></p>
+              <ul class="tl-bullets">
+                <li data-i18n="exp.job1.b1">Built a Generative AI test-automation suite that generates test cases, scripts, and end-to-end test scenarios directly from a GitHub repository and Jira project link — up to 100 test cases per repository.</li>
+                <li data-i18n="exp.job1.b2">Made test-case generation and validation 90% faster than manual work by automatically evaluating LLM outputs for relevance, traceability, and quality.</li>
+                <li data-i18n="exp.job1.b3">Extended the suite with Selenium checks that verify page elements and core user flows whenever the target project includes a web front end.</li>
+                <li data-i18n="exp.job1.b4">Developed an enterprise-scale financial document automation framework for a healthcare client, processing 500–1,000 credit memos per week with Python, GCP, and Apache Airflow — cutting manual effort by 75%.</li>
+                <li data-i18n="exp.job1.b5">Prepared and curated a large-scale evaluation dataset for systematic language-model testing, covering complete real-world codebases such as a fully fledged banking application.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3 class="tl-role" data-i18n="exp.job2.role">Software Developer Intern</h3>
+                <span class="tl-date" data-i18n="exp.job2.date">Mar 2023 – Jul 2023</span>
+              </div>
+              <p class="tl-org">Genpact · <span data-i18n="exp.job2.location">Bangalore, India</span></p>
+              <ul class="tl-bullets">
+                <li data-i18n="exp.job2.b1">Developed a full-stack banking application with React.js, Node.js, and MongoDB.</li>
+                <li data-i18n="exp.job2.b2">Implemented real-time transaction tracking and monthly statement generation.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="subsection-title" data-reveal data-i18n="edu.title">Education</h3>
+        <div class="edu-grid" data-reveal-group>
+          <div class="edu-card" data-reveal>
+            <div class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8.5 10-4.5 10 4.5-10 4.5L2 8.5Z"/><path d="M6.5 10.7v4.8c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.8"/><path d="M22 8.5v5"/></svg>
+            </div>
+            <div class="edu-body">
+              <h4>Technische Universität Dresden</h4>
+              <p class="edu-degree" data-i18n="edu.1.degree">M.Sc. Computer Science</p>
+              <p class="edu-meta"><span data-i18n="edu.1.date">Oct 2025 – Oct 2027 (expected)</span> · <span data-i18n="edu.1.loc">Dresden, Germany</span></p>
+            </div>
+          </div>
+          <div class="edu-card" data-reveal>
+            <div class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8.5 10-4.5 10 4.5-10 4.5L2 8.5Z"/><path d="M6.5 10.7v4.8c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.8"/><path d="M22 8.5v5"/></svg>
+            </div>
+            <div class="edu-body">
+              <h4>R V Institute of Technology and Management</h4>
+              <p class="edu-degree" data-i18n="edu.2.degree">B.E. Computer Science &amp; Engineering</p>
+              <p class="edu-meta"><span data-i18n="edu.2.date">Sep 2019 – Jul 2023</span> · <span data-i18n="edu.2.loc">Bangalore, India</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <p class="kicker" data-reveal data-i18n="proj.kicker">03 · Projects</p>
+        <h2 class="section-title" data-reveal data-i18n="proj.title">Things I've built</h2>
+
+        <div class="projects-grid" data-reveal-group>
+          <!-- Featured project -->
+          <article class="project-card project-featured" data-reveal>
+            <div class="project-top">
+              <span class="featured-badge" data-i18n="proj.featured">Featured</span>
+              <span class="project-badge" data-i18n="proj.1.badge">Built at Genpact</span>
+            </div>
+            <h3 class="project-name">Generative AI Test-Automation Suite</h3>
+            <p class="project-desc" data-i18n="proj.1.desc">An LLM-powered suite that generates test cases, scripts, and complete end-to-end test scenarios straight from a GitHub repository and Jira project link — up to 100 test cases per repository. Automatic evaluation of LLM outputs for relevance, traceability, and quality makes generation and validation 90% faster than manual work, with integrated Selenium checks for web front ends.</p>
+            <ul class="project-tags">
+              <li>Python</li><li>Generative AI</li><li>LLM Evaluation</li><li>Selenium</li><li>Jira</li>
+            </ul>
+            <a href="https://github.com/Vishnu467" class="project-link" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.68 5.38-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+              <span data-i18n="proj.viewGithub">View on GitHub</span>
+            </a>
+          </article>
+
+          <!-- FarmiLedger -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-badge" data-i18n="proj.2.badge">Bachelor Thesis</span>
+            </div>
+            <h3 class="project-name">FarmiLedger</h3>
+            <p class="project-desc" data-i18n="proj.2.desc">A blockchain-based bidding platform tackling unfair crop pricing through transparent, decentralized transactions between farmers and buyers. Smart contracts and on-chain storage are integrated with a MERN-stack web application. Published at ICAMSNT 2023.</p>
+            <ul class="project-tags">
+              <li>Solidity</li><li>React.js</li><li>Node.js</li><li>MongoDB</li><li>Ethereum</li>
+            </ul>
+            <a href="https://github.com/Vishnu467" class="project-link" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.68 5.38-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+              <span data-i18n="proj.viewGithub">View on GitHub</span>
+            </a>
+          </article>
+
+          <!-- House of Friends -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-badge" data-i18n="proj.3.badge">Mobile App</span>
+            </div>
+            <h3 class="project-name">House of Friends</h3>
+            <p class="project-desc" data-i18n="proj.3.desc">A social networking app for iOS and Android where users create private “houses” for group chat — with secure authentication, responsive UI components, and backend APIs for real-time interaction.</p>
+            <ul class="project-tags">
+              <li>React Native</li><li>Express.js</li><li>MongoDB</li>
+            </ul>
+            <a href="https://github.com/Vishnu467/House-of-friends" class="project-link" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.68 5.38-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+              <span data-i18n="proj.viewGithub">View on GitHub</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section class="section section-alt" id="skills">
+      <div class="section-inner">
+        <p class="kicker" data-reveal data-i18n="skills.kicker">04 · Skills</p>
+        <h2 class="section-title" data-reveal data-i18n="skills.title">What I work with</h2>
+
+        <div class="skills-grid" data-reveal-group>
+          <div class="skill-group" data-reveal>
+            <h3 data-i18n="skills.programming">Programming</h3>
+            <div class="skill"><div class="skill-row"><span>Python</span></div><div class="skill-bar"><div class="skill-fill" data-level="92"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>JavaScript</span></div><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>Java</span></div><div class="skill-bar"><div class="skill-fill" data-level="78"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>SQL</span></div><div class="skill-bar"><div class="skill-fill" data-level="75"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>C++</span></div><div class="skill-bar"><div class="skill-fill" data-level="70"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>Solidity</span></div><div class="skill-bar"><div class="skill-fill" data-level="65"></div></div></div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <h3 data-i18n="skills.ai">AI &amp; Generative AI</h3>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.llmEval">LLM Evaluation</span></div><div class="skill-bar"><div class="skill-fill" data-level="90"></div></div></div>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.llmWorkflows">LLM-based Workflows</span></div><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div></div>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.nlp">Natural Language Processing</span></div><div class="skill-bar"><div class="skill-fill" data-level="80"></div></div></div>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.ml">Machine Learning</span></div><div class="skill-bar"><div class="skill-fill" data-level="78"></div></div></div>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.retrieval">Retrieval-based Methods</span></div><div class="skill-bar"><div class="skill-fill" data-level="72"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>PyTorch</span></div><div class="skill-bar"><div class="skill-fill" data-level="70"></div></div></div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <h3 data-i18n="skills.testing">Testing &amp; Automation</h3>
+            <div class="skill"><div class="skill-row"><span>Selenium (E2E)</span></div><div class="skill-bar"><div class="skill-fill" data-level="92"></div></div></div>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.autoWorkflows">Automated Test Workflows</span></div><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>Cypress (E2E)</span></div><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
+            <div class="skill"><div class="skill-row"><span data-i18n="skills.item.agile">Agile Testing</span></div><div class="skill-bar"><div class="skill-fill" data-level="78"></div></div></div>
+          </div>
+
+          <div class="skill-group" data-reveal>
+            <h3 data-i18n="skills.tools">Tools</h3>
+            <div class="skill"><div class="skill-row"><span>Git</span></div><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>GCP</span></div><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>Jira</span></div><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>Apache Airflow</span></div><div class="skill-bar"><div class="skill-fill" data-level="78"></div></div></div>
+            <div class="skill"><div class="skill-row"><span>Linux</span></div><div class="skill-bar"><div class="skill-fill" data-level="75"></div></div></div>
+            <p class="skill-also"><span data-i18n="skills.also">Also:</span> <span data-i18n="skills.tools.also">OOP · E2E Testing · Software Testing</span></p>
+          </div>
+
+          <div class="skill-group skill-group-wide" data-reveal>
+            <h3 data-i18n="skills.web">Web &amp; Databases</h3>
+            <div class="skill-cols">
+              <div>
+                <div class="skill"><div class="skill-row"><span>React.js</span></div><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div></div>
+                <div class="skill"><div class="skill-row"><span>Node.js</span></div><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
+                <div class="skill"><div class="skill-row"><span>MongoDB</span></div><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
+              </div>
+              <div>
+                <div class="skill"><div class="skill-row"><span>Express.js</span></div><div class="skill-bar"><div class="skill-fill" data-level="80"></div></div></div>
+                <div class="skill"><div class="skill-row"><span>React Native</span></div><div class="skill-bar"><div class="skill-fill" data-level="75"></div></div></div>
+                <div class="skill"><div class="skill-row"><span>MySQL</span></div><div class="skill-bar"><div class="skill-fill" data-level="72"></div></div></div>
+              </div>
+            </div>
+            <p class="skill-also"><span data-i18n="skills.also">Also:</span> Mongoose · PHP · WordPress</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Publication ===================== -->
+    <section class="section" id="publication">
+      <div class="section-inner">
+        <p class="kicker" data-reveal data-i18n="pub.kicker">05 · Research</p>
+        <h2 class="section-title" data-reveal data-i18n="pub.title">Publication</h2>
+
+        <article class="pub-card" data-reveal>
+          <div class="pub-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2.5H6.5A2.5 2.5 0 0 0 4 5v14.5Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/><path d="M8 7h8M8 11h5"/></svg>
+          </div>
+          <div class="pub-body">
+            <span class="pub-badge" data-i18n="pub.badge">Conference Paper · 2023</span>
+            <h3 class="pub-name">Blockchain Bidding System for Selling Agricultural Produce</h3>
+            <p class="pub-venue">International Conference on Advanced Materials Science and Nanotechnology (ICAMSNT), 2023</p>
+            <p class="pub-desc" data-i18n="pub.desc">A research paper on FarmiLedger — a blockchain-powered bidding framework designed to tackle crop pricing disparities through transparent, decentralized transactions between farmers and buyers, improving data integrity, fairness, and stakeholder collaboration in agricultural supply chains.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== Certifications ===================== -->
+    <section class="section section-alt" id="certifications">
+      <div class="section-inner">
+        <p class="kicker" data-reveal data-i18n="certs.kicker">06 · Credentials</p>
+        <h2 class="section-title" data-reveal data-i18n="certs.title">Certifications</h2>
+
+        <ul class="certs-grid" data-reveal-group>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>Google Cloud Platform Associate Cloud Engineer</span>
+          </li>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>Generative AI Engineering – Databricks</span>
+          </li>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>Tricentis Tosca Web Automation and Testing AS1</span>
+          </li>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>Selenium WebDriver with Java – Basics to Advanced + Frameworks</span>
+          </li>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>The Complete Full-Stack Web Development Bootcamp</span>
+          </li>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>The Complete Python Bootcamp – From Zero to Hero in Python</span>
+          </li>
+          <li class="cert-card" data-reveal>
+            <span class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-.9 7 4.4-2.6L16.4 21l-.9-7"/></svg></span>
+            <span>Learn JAVA Programming – Beginner to Master</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section class="section section-contact" id="contact">
+      <div class="section-inner contact-inner">
+        <p class="kicker" data-reveal data-i18n="contact.kicker">07 · Contact</p>
+        <h2 class="section-title contact-title" data-reveal data-i18n="contact.title">Let's work together.</h2>
+        <p class="contact-text" data-reveal data-i18n="contact.text">I'm open to working student (Werkstudent) positions in software development, AI/ML, and test automation. Feel free to reach out — my inbox is always open.</p>
+
+        <div class="contact-actions" data-reveal>
+          <a href="mailto:saivishnuswaroop@gmail.com" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            <span data-i18n="contact.emailBtn">Send me an email</span>
+          </a>
+          <span class="contact-or" data-i18n="contact.or">or find me on</span>
+          <div class="contact-socials">
+            <a href="https://github.com/Vishnu467" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" data-i18n-aria="aria.github">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.68 5.38-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/vishnu467" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" data-i18n-aria="aria.linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="contact-email-line" data-reveal>saivishnuswaroop@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 Sai Vishnu · Built with plain HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-socials">
+        <a href="mailto:saivishnuswaroop@gmail.com" class="icon-btn icon-btn-sm" aria-label="Send an email" data-i18n-aria="aria.email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+        </a>
+        <a href="https://github.com/Vishnu467" class="icon-btn icon-btn-sm" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" data-i18n-aria="aria.github">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.68 5.38-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/vishnu467" class="icon-btn icon-btn-sm" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" data-i18n-aria="aria.linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
