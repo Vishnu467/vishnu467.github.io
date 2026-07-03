@@ -980,6 +980,8 @@ body.lang-fade [data-i18n] { opacity: 0; }
   margin-bottom: 22px;
   margin-top: auto;
 }
+/* Cards without a repo link (e.g. work built at Genpact) end with the tags */
+.project-tags:last-child { margin-bottom: 0; }
 .project-tags li {
   font-family: var(--font-mono);
   font-size: 0.72rem;

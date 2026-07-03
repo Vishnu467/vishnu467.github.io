@@ -150,7 +150,7 @@ const TRANSLATIONS = {
     "contact.or": "or find me on",
 
     /* Footer */
-    "footer.copy": "© 2026 Sai Vishnu · Built with plain HTML, CSS & JavaScript."
+    "footer.copy": "© 2026 Sai Vishnu"
   },
 
   de: {
@@ -298,6 +298,6 @@ const TRANSLATIONS = {
     "contact.or": "oder Sie finden mich auf",
 
     /* Footer */
-    "footer.copy": "© 2026 Sai Vishnu · Erstellt mit reinem HTML, CSS & JavaScript."
+    "footer.copy": "© 2026 Sai Vishnu"
   }
 };
